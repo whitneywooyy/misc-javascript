@@ -1,0 +1,58 @@
+// ROCK PAPER SCISSORS!
+// -------------------------------------------------------------------------
+
+var userChoice = prompt("Do you choose rock, paper or scissors?").toLowerCase();
+var computerChoice = Math.random();
+
+// assigns computer's choice based on the random generator
+if (computerChoice < 0.34) {
+	computerChoice = "rock";
+} 
+else if(computerChoice > 0.34 && computerChoice < 0.67) {
+	computerChoice = "paper";
+} 
+else {
+	computerChoice = "scissors";
+}
+
+// function that compares the user's choice to the computer's choice
+var compare = function(choice1, choice2) {
+	if (choice1 === choice2) {
+  	  return "The result is a tie!";   
+    }
+	else if (choice1 === "paper") {
+  	  if (choice2 === "rock") {
+    	return "Paper wins";
+      }
+      else {
+  	    return "Scissors wins";   
+      } 
+    }         
+	else if (choice1 === "scissors") {
+  	  if (choice2 === "rock") {
+    	return "Rock wins";   
+      }
+      else {
+  	    return "Scissors wins";   
+      }
+    }   
+    else if (choice1 === "rock") {
+  	  if (choice2 === "paper") {
+    	return "Paper wins";
+      }
+      else {
+  	    return "Rock wins";   
+      }
+    }
+};
+
+// checks validity of the user's choice
+while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
+  alert("Sorry, I don't understand what " + "'" + userChoice + "'" + " is! Please re-enter your choice!");
+    userChoice = prompt("Do you choose rock, paper or scissors?").toLowerCase();
+
+}
+  alert("You chose: " + userChoice + ". " + "I chose: " + computerChoice + ". " + compare(userChoice, computerChoice) + "!");
+  
+// -------------------------------------------------------------------------
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/v8jhforg/ 

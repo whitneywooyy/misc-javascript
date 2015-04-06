@@ -15,3 +15,13 @@ console.log(finder(aString, anArray));
 
 
 // SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/chpk5r12/
+
+
+OR THIS WORKS TOO:
+
+var finder2 = function(someString, coolerArray) {
+    return coolerArray.indexOf(someString) >= 0;
+}
+console.log(finder2(someStr, coolArray));
+
+// If the string is present in the array, it will return a number greater than 0. If it's not, it will return -1.

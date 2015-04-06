@@ -1,0 +1,17 @@
+// Write a function called finder that accepts two parameters, the first one a string and the second an array. Have your function return true if the string is found in the array and false if it's not.
+
+var aString = "dumb";
+var anArray = ["hackerbyte", "hello", "coolbeans"];
+
+var finder = function(str, arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === aString) {
+            return true;    
+        }
+    }
+    return false;
+};
+console.log(finder(aString, anArray));
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/chpk5r12/

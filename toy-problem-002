@@ -1,0 +1,48 @@
+//--------Write a function called combinator that is given two arrays as arguments and combines them.
+
+var names = ["Tyler", "Ean", "Cahlan"];
+var lastNames = ["McGinnis", "Platter", "Sharp"];
+
+
+var combinator = function(arr1, arr2) {
+    var fullNames = [];
+    for (var i = 0; i < arr1.length; i++) {
+        var newName = arr1[i] + " " + arr2[i];
+        fullNames.push(newName);
+    }
+    return fullNames;
+};
+console.log(combinator(names, lastNames));
+
+
+//-------- OR 
+
+
+var combinator = function(arr1, arr2) {
+    var fullNames = [];
+    for (var i = 0; i < arr1.length; i++) {
+        fullNames[i] = arr1[i] + " " + arr2[i];
+    }
+    return fullNames;
+};
+console.log(combinator(names, lastNames));
+
+
+//-------- OR (RECURSION)
+
+
+var newNames = [];
+var combinator = function(arr1, arr2) {
+    newNames.push(arr1.splice(arr1[0], 1) + " " + arr2.splice(arr2[0], 1));
+    if (arr1.length > 0 || arr2.length > 0) {
+        combinator(arr1, arr2);
+    }
+    else {
+        return newNames;
+    }
+};
+console.log(combinator(names, lastNames));
+
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/08ekhanb/

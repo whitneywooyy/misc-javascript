@@ -14,6 +14,12 @@ sum([1,4,3,5,2,8], function(total){
 });
 
 
+// OR THIS WORKS TOO:
+
+var sum = function(array, cb) {
+   return cb(eval(array.join('+')));
+ };
+
 
 // SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/cbwdbL8a/
 

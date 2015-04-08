@@ -1,0 +1,19 @@
+// Write a function to make the below function invokation work
+
+var sum = function(arr, callback) {
+    var sumOfArr = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sumOfArr = sumOfArr + arr[i];   
+    }
+    return callback(sumOfArr);        
+};
+
+
+sum([1,4,3,5,2,8], function(total){
+    console.log('The total sum of the array is ' + total);    
+});
+
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/cbwdbL8a/
+

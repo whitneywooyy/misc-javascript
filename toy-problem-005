@@ -1,0 +1,15 @@
+// Write a function called reverse that takes in a string and reverses that string without using .reverse on the Array's prototype.
+
+var stringy = "This is a sentence";
+
+var reverse = function(str){
+    var strRev = "";
+    for (var i = str.length - 1; i >=0; i--) {
+        strRev = strRev + str[i];
+    }
+    return strRev;
+};
+console.log(reverse(stringy));
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/07davphq/

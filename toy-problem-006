@@ -1,0 +1,14 @@
+// Write a function that returns the factorial of a number 
+// i.e. the number 5 will return 5 * 4 * 3 * 2 * 1 ==> 120
+
+var factorial = function(num) {
+    var product = 1;
+    for (var i = num; i > 0; i--) {
+        product = product * i;    
+    }
+    return product;
+};
+console.log(factorial(6));
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/13waffm0/

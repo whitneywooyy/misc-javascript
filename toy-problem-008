@@ -1,0 +1,23 @@
+// Given an arbitrary input string, return the first non-repeated character in the string. 
+// For example:
+// firstNonRepeatedCharacter('ABA'); // => 'B'
+// firstNonRepeatedCharacter('AABCABD'); // => 'C'
+
+var firstNonRepeatedCharacter = function (str) {
+    var index = [];
+    var count;
+    str.split('').forEach(function (letter, i) {
+        count = 0;
+        str.split('').forEach(function (latter) {
+            if (letter === latter) {
+                count += 1;
+            }
+        });
+        index.push(count);
+    });
+    return str[index.indexOf(1)];
+};
+console.log(firstNonRepeatedCharacter("fhuiedkfljie"));
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/e3myxa5k/

@@ -40,4 +40,4 @@ var firstNonRepeatedCharacter = function(str) {
 }
 console.log(firstNonRepeatedCharacter(sampleString));
 
-// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/t08h0kt1/
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/t08h0kt1/1/

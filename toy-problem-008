@@ -21,3 +21,23 @@ console.log(firstNonRepeatedCharacter("fhuiedkfljie"));
 
 
 // SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/e3myxa5k/
+
+
+// OR
+
+
+var sampleString = "aaaaaaabaaaaaddcccfiifroro";
+var firstNonRepeatedCharacter = function(str) {
+    var countStr = str.charAt(0);
+    for (var i = 1; i < str.length; i++) {
+        for (var j = 0; j < countStr.length; j++) {
+            if (str.charAt(i) !== countStr.charAt(j)) {
+                return str.charAt(i);
+            }
+        }
+        countStr += str.charAt(i);
+    }
+}
+console.log(firstNonRepeatedCharacter(sampleString));
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/t08h0kt1/

@@ -1,0 +1,17 @@
+// Write a function called ABCheck that takes a string parameter and return the string true if the characters a and b are separated by exactly 3 places anywhere in the string at least once (i.e. 'lane borrowed' would result true as there is exactly 3 chars between a and b). Otherwise, return the string false.
+
+var aBCheck = function(str){
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] === 'a' && str[i+4] === 'b') {
+            return true;        
+        }
+        else if (str[i] === 'b' && str[i+4] === 'a') {
+            return true;    
+        }
+    }
+    return false;
+};
+console.log(aBCheck("b123a"));
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/m4rn86s7/

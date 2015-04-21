@@ -1,0 +1,32 @@
+// Write a fn that generates an array of integers of the Fibonacci sequence, up to i = 100. The first two in the sequence are 0 and 1. Write a fn to check if a given number is in the Fibonacci sequence, return "yes" if it is, if not, return "no".
+
+var fibonacci = function(){
+    var sequence = [1, 2];
+    for (var i = 0; i < 100; i++) {
+        var newNum = sequence[i] + sequence[i-1];
+        sequence.push(newNum);
+    }
+    if(sequence.indexOf(newNum) !== -1){
+        return "yes";    
+    }
+    else {
+        return "no";    
+    }
+};
+fibonacci();
+
+
+// OR
+
+    
+var fib = function(numMax){
+    for(i = 0, j = 1, k = 0; k < numMax; i = j, j = x, k++){
+        x = i + j;
+        console.log(x);
+    }
+}
+
+fib(100)
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/43cdub3t/

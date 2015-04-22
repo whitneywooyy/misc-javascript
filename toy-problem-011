@@ -1,0 +1,29 @@
+// Find the only item that occurs an even number of times in an array. If there is more than one item, return one of them. 
+
+// var onlyEven = evenOccurence([1,6,2,4,4,5,6,8,9,6]);
+// console.log(onlyEven); // 4
+
+var arr = [1,6,6,2,4,4,5,6,8,9,6];
+
+var onlyEven = function(arr){
+    var times = {};
+    var x = 0;
+    while (x < arr.length) {
+        if (!times[arr[x]]) {
+            times[arr[x]] = 1;    
+        } else {
+            times[arr[x]]++;    
+        }
+        x++;
+    }
+    for (var i in times) {
+        if (times[i] % 2 === 0) {
+            return i;    
+        }
+    }
+
+};
+console.log("Answer", onlyEven(arr));
+
+
+// SEE IT IN ACTION: https://jsfiddle.net/whitneywooyy/29gbxL2s/

@@ -1,0 +1,32 @@
+// Write a function that can only be invoked once.
+
+var fn = function(){
+    var exec = false;
+    return function(){
+        if (!exec) {
+            exec = true;
+            return "hey";
+        }
+    }
+};
+fn();
+
+// Above only returns the function
+
+// OR
+
+var timesInvoked = 0;
+
+var oneTime = function(){
+    if (timesInvoked > 0) {
+        console.log("Cannot be invoked more than once");
+    }
+    else {
+        timesInvoked++;
+        console.log("My function is working.");
+    }
+};
+oneTime();
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/0jwj3gj5/

@@ -1,0 +1,25 @@
+// Make the following code work:
+
+//var counter = getCounter();
+//counter(); //2
+//counter(); //4
+//counter(); //6
+//counter(); //8
+//counter(); //10
+
+var getCounter = function(){
+    var num = 0;
+    return function(){
+        num +=2;
+        if (num > 10) {
+            return null;    
+        } else {
+            return num;
+        }
+    }    
+};
+var counter = getCounter();
+counter();
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/1qmmL9xm/

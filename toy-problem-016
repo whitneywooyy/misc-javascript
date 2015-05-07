@@ -1,0 +1,19 @@
+// Recreate the Array prototype push method. If you get done, also do pop. Hint: use the this keyword
+
+var PushMethod = function(){
+    
+};
+
+PushMethod.prototype.shup = function(item){
+    this[this.length] = item;
+    this.length++;
+    return this.length;
+};
+
+var arr = [];
+
+arr.shup('hey there');
+
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/k4wag190/

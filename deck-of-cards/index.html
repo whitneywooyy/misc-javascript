@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="cards">
+	<head>
+		<title>Deck of Cards</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body ng-controller="mainCtrl">
+		<div ng-repeat="card in searchResults"><img src="{{card.image}}" /></div>
+		<!-- SCRIPTS -->
+		<script src="angular.js"></script>
+		<script src="app.js"></script>
+		<script src="mainctrl.js"></script>
+		<script src="mainService.js"></script>
+	</body>
+</html>

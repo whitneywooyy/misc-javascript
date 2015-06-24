@@ -1,0 +1,67 @@
+// Write a function that accepts a string consisting entirely of brackets ([](){}) and returns whether it is balanced. Every 'opening' bracket must be followed by a closing bracket of the same type. There can also be nested brackets, which adhere to the same rule.
+
+// My attempt
+
+var br1 = ['(', ')'];
+var br2 = ['[', ']'];
+var br3 = ['{', '}'];
+var br4 = ['<', '>'];
+
+var bracketChecker1 = function(str){
+    var strArr = str.split('');
+    // console.log(strArr);
+    var store = [];
+    var store2 = [];
+    for (var i = 0; i < strArr.length; i++){
+        if (strArr[i] === br1[0]){
+            // console.log(strArr[i], i);
+            store.push(strArr[i]);
+            if (strArr[i] === br1[1]){
+               // console.log(strArr[i], i);
+                store2.push(strArr[i]);
+            }
+        }
+    }
+    if (store.length === store2.length) {
+            // console.log("true");
+        }
+};
+
+
+// Solution
+
+var bracketChecker2 = function(str){
+    var obj = {
+        "()": 0,
+        "{}": 0,
+        "[]": 0,
+        "<>": 0
+    };
+    for (var i = 0; i < str.length; i++) {
+        for (var key in obj) {
+            if (key.indexOf(str[i]) === 0) {
+                obj[key]++;    
+            } 
+            else if (key.indexOf(str[i]) === 1) {
+                obj[key]--;
+                if (obj[key] < 0) {
+                    console.log("Nadda!");
+                    return false;    
+                }
+            }
+        }
+    }
+    for (var item in obj) {
+        if (obj[item]) {
+            console.log("Nope!");
+            return false;    
+        }
+    }
+    console.log("It works!");
+    return true;
+};
+
+bracketChecker2("()[]{}(([])){[()][]}");
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/sjjfoxLr/

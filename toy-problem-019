@@ -1,0 +1,58 @@
+// Write a function that console.logs numbers from 1 to 100. But for multiples of 3, print 'fizz' for multiples of 5, print 'buzz', and for multiples of both 3 and 5, print 'fizz buzz'. 
+// If you can do it with a regular for loop, try doing it with recursion.
+
+var recursion = function(n){
+    if (n % 15 === 0) {
+        console.log("fizzbuzz", n);
+        if (n > 1) {
+            recursion(n-1);    
+        }
+    }
+    else if (n % 5 === 0) {
+        console.log("buzz", n);
+        if (n > 1) {
+            recursion(n-1);        
+        }
+    }
+    else if (n % 3 === 0) {
+        console.log("fizz", n);
+        if (n > 1) {
+            recursion(n-1);        
+        }
+    }
+    else {
+        console.log(n);
+        if (n > 1) {
+            recursion(n-1);        
+        }
+    }
+};
+recursion(100);
+
+// OR
+
+var fizzbuzz = function(max, i){
+    i = i === undefined ? 1 : i;
+    if (i === max + 1){
+        return;    
+    }
+    else if (i % 15 === 0){
+        console.log('fizz buzz');    
+    }
+    else if (i % 5 === 0){
+        console.log('buzz');    
+    }
+    else if (i % 3 === 0){
+        console.log('fizz');    
+    }
+    else {
+        console.log(i);
+        i++;
+        fizzbuzz(max, i);
+    }
+};
+
+
+
+// SEE IT IN ACTION: http://jsfiddle.net/whitneywooyy/gb6gznk8/
+// fizzbuzz(100);
